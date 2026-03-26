@@ -1,0 +1,55 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Schedule {
+  id        String   @id @default(cuid())
+  time      String   // e.g. "08:00"
+  teamA     String
+  teamB     String
+  date      String   // e.g. "2026-07-12"
+  round     String   // e.g. "Jogo 1"
+  result    String?  // e.g. "2x1" or null
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Team {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  formation   String    @default("4-3-3")
+  players     Player[]
+  payment     Payment?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Player {
+  id        String   @id @default(cuid())
+  name      String
+  number    Int?
+  position  String   // GK, DEF, MID, FWD, RES
+  teamId    String
+  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Payment {
+  id        String        @id @default(cuid())
+  teamId    String        @unique
+  team      Team          @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  status    PaymentStatus @default(UNPAID)
+  updatedAt DateTime      @updatedAt
+}
+
+enum PaymentStatus {
+  UNPAID
+  HALF_PAID
+  PAID
+}
