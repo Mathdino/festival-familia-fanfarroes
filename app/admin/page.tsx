@@ -829,7 +829,6 @@ function PaymentsAdmin() {
                       )}
                       style={{
                         fontFamily: "Barlow Condensed, sans-serif",
-                        ringColor: ps.color,
                       }}
                     >
                       {status === ps.value && <Check size={10} />}
