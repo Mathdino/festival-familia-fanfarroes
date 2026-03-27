@@ -150,7 +150,7 @@ export default function HomeScreen() {
             { icon: Clock, label: "Horário inicial", value: "08:00 da manhã" },
             {
               icon: MapPin,
-              label: "Local dos jogos",
+              label: "Local",
               value: "Chute Inicial Arena Guarulhos",
             },
             { icon: LayoutGrid, label: "Formato", value: "20min × 2 tempos" },
