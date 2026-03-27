@@ -153,7 +153,7 @@ export default function LineupsScreen() {
                 </div>
                 <div className="flex-1 text-left">
                   <p
-                    className="text-white font-medium text-base uppercase"
+                    className="text-white font-medium text-lg uppercase"
                     style={{ fontFamily: "Barlow Condensed, sans-serif" }}
                   >
                     {team.name}
@@ -251,9 +251,11 @@ function AddTeamForm({
     e.preventDefault();
     if (!name.trim()) return setError("Digite o nome do time");
 
-    const allPlayers = [...starters, ...reserves];
-    if (allPlayers.some((p) => !p.name.trim()))
-      return setError("Preencha o nome de todos os jogadores");
+    const filteredReserves = reserves.filter((p) => p.name.trim() !== "");
+    const allPlayers = [...starters, ...filteredReserves];
+
+    if (starters.some((p) => !p.name.trim()))
+      return setError("Preencha o nome de todos os titulares");
 
     setSubmitting(true);
     setError("");
@@ -296,7 +298,7 @@ function AddTeamForm({
     >
       <div className="flex items-center justify-between mb-5">
         <h3
-          className="text-xl font-black text-white uppercase"
+          className="text-xl font-medium text-white uppercase"
           style={{ fontFamily: "Barlow Condensed, sans-serif" }}
         >
           Novo Time
@@ -378,7 +380,7 @@ function AddTeamForm({
           <button
             type="button"
             onClick={onCancel}
-            className="flex-1 border border-white/10 text-white/60 font-bold py-3 rounded-xl uppercase text-xs transition-colors hover:bg-white/5"
+            className="flex-1 border border-white/10 text-white/60 font-bold py-3 rounded-xl uppercase text-sm transition-colors hover:bg-white/5"
             style={{ fontFamily: "Barlow Condensed, sans-serif" }}
           >
             Cancelar
@@ -386,7 +388,7 @@ function AddTeamForm({
           <button
             disabled={submitting}
             type="submit"
-            className="flex-1 bg-[#0080cc] text-white font-medium py-3 rounded-xl uppercase text-xs transition-colors hover:bg-[#0080cc]/90 flex items-center justify-center gap-2"
+            className="flex-1 bg-[#0080cc] text-white font-medium py-3 rounded-xl uppercase text-sm transition-colors hover:bg-[#0080cc]/90 flex items-center justify-center gap-2"
             style={{ fontFamily: "Barlow Condensed, sans-serif" }}
           >
             {submitting ? (

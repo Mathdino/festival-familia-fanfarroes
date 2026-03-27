@@ -1,7 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { Trophy, Star } from "lucide-react";
+import {
+  Trophy,
+  Star,
+  Calendar,
+  Clock,
+  MapPin,
+  LayoutGrid,
+  List,
+} from "lucide-react";
 
 export default function HomeScreen() {
   return (
@@ -119,7 +127,7 @@ export default function HomeScreen() {
           </div>
           <div>
             <p
-              className="text-white font-bold text-base"
+              className="text-white font-bold text-lg"
               style={{ fontFamily: "Barlow Condensed, sans-serif" }}
             >
               Jogue pelo troféu!
@@ -133,20 +141,25 @@ export default function HomeScreen() {
         {/* Event Info */}
         <div className="w-full mt-4 grid grid-cols-1 gap-2">
           {[
-            { icon: "📅", label: "Data", value: "07 de Junho" },
-            { icon: "⏰", label: "Início", value: "08:00 da manhã" },
             {
-              icon: "📍",
-              label: "Local",
+              icon: List,
+              label: "INSCRIÇÕES ATÉ",
+              value: "24 de Maio",
+            },
+            { icon: Calendar, label: "Data dos jogos", value: "07 de Junho" },
+            { icon: Clock, label: "Horário inicial", value: "08:00 da manhã" },
+            {
+              icon: MapPin,
+              label: "Local dos jogos",
               value: "Chute Inicial Arena Guarulhos",
             },
-            { icon: "⚽", label: "Formato", value: "20min × 2 tempos" },
+            { icon: LayoutGrid, label: "Formato", value: "20min × 2 tempos" },
           ].map((info) => (
             <div
               key={info.label}
               className="flex items-center gap-3 bg-[#121315] rounded-xl px-4 py-3 border border-white/5"
             >
-              <span className="text-lg">{info.icon}</span>
+              <info.icon size={18} className="text-[#0080cc]" />
               <div className="flex-1 flex justify-between items-center">
                 <span className="text-white/40 text-xs uppercase tracking-wide">
                   {info.label}

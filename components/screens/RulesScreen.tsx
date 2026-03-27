@@ -1,72 +1,73 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  BookOpen,
+  ChevronDown,
+  ChevronUp,
+  Users,
+  Hash,
+  Clock,
+  Timer,
+  Trophy,
+  CircleDollarSign,
+  CalendarDays,
+  Gavel,
+  ClipboardList,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const rules = [
   {
-    icon: "👥",
+    icon: Users,
     title: "Composição das Equipes",
     content:
       "Todos os times devem ter no mínimo 6 jogadores ou mais para reservas, pois os mesmos não poderão jogar em outros times.",
   },
   {
-    icon: "🔢",
+    icon: Hash,
     title: "Número de Jogos",
     content:
       "Serão realizados 10 jogos, equivalendo a 20 equipes participantes.",
   },
   {
-    icon: "⏰",
+    icon: Clock,
     title: "Horário dos Jogos",
     content:
       "Os jogos começarão às 8:00 horas da manhã (ajustado conforme cronograma).",
   },
   {
-    icon: "⏱️",
+    icon: Timer,
     title: "Duração das Partidas",
     content:
       "Todos os jogos terão duração de 20x20 minutos com intervalo de 10 minutos entre cada tempo.",
   },
   {
-    icon: "🏆",
+    icon: Trophy,
     title: "Premiação",
     content:
       "Um troféu para o ganhador da partida. Se a partida terminar em empate, serão feitas cobranças de pênaltis (5 de cada lado).",
   },
   {
-    icon: "💰",
+    icon: CircleDollarSign,
     title: "Taxa de Participação",
     content: "Valor de R$ 200,00 para cada time participante.",
   },
   {
-    icon: "🎂",
+    icon: CalendarDays,
     title: "Idade Mínima",
     content: "Não há idade mínima para participação.",
   },
   {
-    icon: "🟨",
+    icon: Gavel,
     title: "Arbitragem",
     content: "Haverá juiz em todos os jogos.",
   },
   {
-    icon: "📋",
-    title: "Pagamento em 2 Etapas",
-    content:
-      "O pagamento da inscrição é feito em duas etapas: 50% na inscrição e 50% na última semana do festival.",
-  },
-  {
-    icon: "🚫",
-    title: "Desistência do Time",
-    content: "Caso o time desista após a inscrição, perde os 50% já pagos.",
-  },
-  {
-    icon: "🩹",
-    title: "Substituição por Lesão",
-    content:
-      "Se um jogador se machucar e não houver reserva, poderá ser substituído por outro atleta.",
+    icon: ClipboardList,
+    title: "Regulamento",
+    content: "Seguimos as regras oficiais de Futebol Society.",
   },
 ];
 
@@ -125,23 +126,24 @@ export default function RulesScreen() {
             )}
           >
             <button
-              className="w-full flex items-center gap-3 p-4 text-left"
+              className="w-full flex items-center justify-between p-4 text-left"
               onClick={() => setExpanded(expanded === index ? null : index)}
             >
-              <span className="text-xl flex-shrink-0">{rule.icon}</span>
-              <span
-                className="flex-1 text-white text-sm font-medium"
-                style={{ fontFamily: "Barlow Condensed, sans-serif" }}
-              >
-                {rule.title}
-              </span>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#0080cc]/10 border border-[#0080cc]/20 flex items-center justify-center">
+                  <rule.icon size={16} className="text-[#0080cc]" />
+                </div>
+                <span
+                  className="text-white font-medium text-lg uppercase tracking-tight"
+                  style={{ fontFamily: "Barlow Condensed, sans-serif" }}
+                >
+                  {rule.title}
+                </span>
+              </div>
               {expanded === index ? (
-                <ChevronUp size={16} className="text-[#0080cc] flex-shrink-0" />
+                <ChevronUp size={18} className="text-[#0080cc]" />
               ) : (
-                <ChevronDown
-                  size={16}
-                  className="text-white/30 flex-shrink-0"
-                />
+                <ChevronDown size={18} className="text-white/20" />
               )}
             </button>
             {expanded === index && (

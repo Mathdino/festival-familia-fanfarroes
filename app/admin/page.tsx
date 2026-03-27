@@ -428,7 +428,7 @@ function SchedulesAdmin() {
                 </div>
               </div>
               <p
-                className="text-white font-medium text-base uppercase"
+                className="text-white font-medium text-lg uppercase"
                 style={{ fontFamily: "Barlow Condensed, sans-serif" }}
               >
                 {s.teamA} <span className="text-white/30">vs</span> {s.teamB}
@@ -667,7 +667,7 @@ function TeamsAdmin() {
               <div className="flex justify-between items-start">
                 <div>
                   <p
-                    className="text-white font-medium text-base uppercase"
+                    className="text-white font-medium text-lg uppercase"
                     style={{ fontFamily: "Barlow Condensed, sans-serif" }}
                   >
                     {t.name}
@@ -809,7 +809,7 @@ function PaymentsAdmin() {
                 className="bg-[#121315] border border-white/8 rounded-xl p-4"
               >
                 <p
-                  className="text-white font-medium text-base uppercase mb-3"
+                  className="text-white font-medium text-lg uppercase mb-3"
                   style={{ fontFamily: "Barlow Condensed, sans-serif" }}
                 >
                   {t.name}
