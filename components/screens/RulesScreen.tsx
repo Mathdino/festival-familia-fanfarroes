@@ -52,7 +52,7 @@ const rules = [
   {
     icon: CircleDollarSign,
     title: "Taxa de Participação",
-    content: "Valor de R$ 200,00 para cada time participante.",
+    content: "Valor de R$ 170,00 para cada time participante.",
   },
   {
     icon: CalendarDays,

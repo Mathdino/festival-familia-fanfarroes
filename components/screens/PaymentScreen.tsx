@@ -36,13 +36,13 @@ const statusConfig = {
     color: "text-red-400",
   },
   HALF_PAID: {
-    label: "Pago metade (R$100)",
+    label: "Pago metade (R$85)",
     className: "badge-half",
     icon: AlertTriangle,
     color: "text-yellow-400",
   },
   PAID: {
-    label: "Pago total (R$200)",
+    label: "Pago total (R$170)",
     className: "badge-paid",
     icon: CheckCircle2,
     color: "text-green-400",
@@ -140,7 +140,7 @@ export default function PaymentScreen() {
                 className="text-[#0080cc] font-medium text-lg"
                 style={{ fontFamily: "Barlow Condensed, sans-serif" }}
               >
-                R$ 200,00
+                R$ 170,00
               </p>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function PaymentScreen() {
                 className="text-[#0080cc] font-medium text-lg"
                 style={{ fontFamily: "Barlow Condensed, sans-serif" }}
               >
-                R$ 100,00
+                R$ 85,00
               </p>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default function PaymentScreen() {
                 className="text-white font-medium text-lg"
                 style={{ fontFamily: "Barlow Condensed, sans-serif" }}
               >
-                R$ 100,00
+                R$ 85,00
               </p>
             </div>
           </div>
