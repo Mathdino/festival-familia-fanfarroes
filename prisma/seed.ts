@@ -34,7 +34,7 @@ async function main() {
   });
 
   // Create sample team if it doesn't exist
-  // We delete and recreate to ensure the player count is exactly 6+4
+  // We delete and recreate to ensure the player count is exactly 6+9
   await prisma.team.deleteMany({ where: { name: "Os Fanfarrões" } });
 
   const team = await prisma.team.create({
@@ -53,6 +53,11 @@ async function main() {
           { name: "Diego", number: 10, position: "RES" },
           { name: "Felipe", number: 8, position: "RES" },
           { name: "Rafael", number: 5, position: "RES" },
+          { name: "Thiago", number: 13, position: "RES" },
+          { name: "Lucas", number: 14, position: "RES" },
+          { name: "Gabriel", number: 15, position: "RES" },
+          { name: "Mateus", number: 16, position: "RES" },
+          { name: "Vitor", number: 17, position: "RES" },
         ],
       },
       payment: {

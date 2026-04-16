@@ -66,7 +66,7 @@ export default function LineupsScreen() {
   const starters = (players: Player[]) =>
     players.filter((p) => p.position !== "RES").slice(0, 6);
   const reserves = (players: Player[]) =>
-    players.filter((p) => p.position === "RES").slice(0, 4);
+    players.filter((p) => p.position === "RES").slice(0, 9);
 
   return (
     <div className="min-h-screen bg-[#0d0f11] px-4 pt-8 pb-4">
@@ -237,7 +237,7 @@ function AddTeamForm({
       })),
   );
   const [reserves, setReserves] = useState<Player[]>(
-    Array(4)
+    Array(9)
       .fill(null)
       .map(() => ({
         name: "",
@@ -354,7 +354,7 @@ function AddTeamForm({
 
         <div>
           <label className="block text-white/40 text-[10px] uppercase font-bold mb-2 tracking-wider">
-            Reservas (4)
+            Reservas (9)
           </label>
           <div className="grid grid-cols-1 gap-2">
             {reserves.map((p, i) => (

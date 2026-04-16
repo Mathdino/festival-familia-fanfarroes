@@ -482,7 +482,17 @@ function TeamsAdmin() {
     setEditing(null);
     setTeamName("");
     setFormation("4-3-3");
-    setPlayers([{ name: "", position: "GK" }]);
+    setPlayers([
+      { name: "", position: "GK" },
+      { name: "", position: "DEF" },
+      { name: "", position: "DEF" },
+      { name: "", position: "MID" },
+      { name: "", position: "MID" },
+      { name: "", position: "FWD" },
+      ...Array(9)
+        .fill(null)
+        .map(() => ({ name: "", position: "RES" })),
+    ]);
     setShowForm(true);
   };
   const openEdit = (t: Team) => {
@@ -500,8 +510,13 @@ function TeamsAdmin() {
     setShowForm(true);
   };
 
-  const addPlayer = () =>
+  const addPlayer = () => {
+    if (players.length >= 15) {
+      alert("Limite de 15 jogadores atingido");
+      return;
+    }
     setPlayers((p) => [...p, { name: "", position: "DEF" }]);
+  };
   const removePlayer = (i: number) =>
     setPlayers((p) => p.filter((_, idx) => idx !== i));
   const updatePlayer = (
@@ -516,12 +531,17 @@ function TeamsAdmin() {
 
   const save = async () => {
     try {
+      const filteredPlayers = players.filter((p) => p.name.trim() !== "");
       const method = editing ? "PUT" : "POST";
       const url = editing ? `/api/teams/${editing.id}` : "/api/teams";
       const res = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: teamName, formation, players }),
+        body: JSON.stringify({
+          name: teamName,
+          formation,
+          players: filteredPlayers,
+        }),
       });
       if (!res.ok) throw new Error("Falha ao salvar");
       setShowForm(false);
@@ -597,7 +617,7 @@ function TeamsAdmin() {
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="text-white/50 text-xs uppercase tracking-wide">
-                Jogadores
+                Jogadores ({players.length}/15)
               </label>
               <button
                 onClick={addPlayer}

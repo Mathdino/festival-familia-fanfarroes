@@ -21,12 +21,14 @@ Um web app **mobile-first** desenvolvido para proporcionar a melhor experiência
 ### ✨ Funcionalidades Principais
 
 #### Para Atletas:
+
 - 📅 **Horários em Tempo Real**: Visualize a grade de jogos atualizada.
 - 📋 **Escalações Táticas**: Veja os times no campo (6 titulares e 4 reservas).
 - 📜 **Regulamento**: Acesso rápido às regras do festival.
 - 💸 **Pagamentos**: Informações para PIX e status de confirmação por equipe.
 
 #### Para Organizadores (Área Admin):
+
 - 🔐 **Painel Protegido**: Acesso via senha para gestão total.
 - 🛠️ **Gestão de Jogos**: Crie, edite e exclua partidas da tabela.
 - 👥 **Gestão de Equipes**: Controle total sobre inscritos e jogadores.
@@ -36,16 +38,17 @@ Um web app **mobile-first** desenvolvido para proporcionar a melhor experiência
 
 ## 🎨 Identidade Visual
 
-| Elemento | Valor | Amostra |
-| :--- | :--- | :--- |
+| Elemento           | Valor     | Amostra                                                  |
+| :----------------- | :-------- | :------------------------------------------------------- |
 | **Azul Principal** | `#0080cc` | ![](https://via.placeholder.com/15/0080cc/0080cc?text=+) |
-| **Fundo Dark** | `#0d0f11` | ![](https://via.placeholder.com/15/0d0f11/0d0f11?text=+) |
+| **Fundo Dark**     | `#0d0f11` | ![](https://via.placeholder.com/15/0d0f11/0d0f11?text=+) |
 
 ---
 
 ## 🚀 Como Rodar Localmente
 
 ### 1️⃣ Preparação
+
 ```bash
 # Clone o repositório
 git clone https://github.com/Mathdino/festival-familia-fanfarroes.git
@@ -58,7 +61,9 @@ npm install
 ```
 
 ### 2️⃣ Configuração
+
 Crie um arquivo `.env` na raiz do projeto:
+
 ```env
 DATABASE_URL="postgresql://USUARIO:SENHA@localhost:5432/neondb"
 NEXTAUTH_SECRET="sua_chave_secreta_aqui"
@@ -66,6 +71,7 @@ ADMIN_PASSWORD="fanfarroes2026"
 ```
 
 ### 3️⃣ Banco de Dados
+
 ```bash
 # Sincronize o schema
 npx prisma db push
@@ -75,9 +81,11 @@ npx prisma db seed
 ```
 
 ### 4️⃣ Iniciar
+
 ```bash
 npm run dev
 ```
+
 Acesse [http://localhost:3000](http://localhost:3000) 🚀
 
 ---
@@ -106,6 +114,6 @@ fanfarroes/
 ---
 
 <div align="center">
-  <p>Desenvolvido com ❤️ para a Família Fanfarrões</p>
+  <p>Desenvolvido para a Família Fanfarrões</p>
   <p><strong>Matheus Bernardino 🏆</strong></p>
 </div>

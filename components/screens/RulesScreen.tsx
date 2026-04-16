@@ -23,7 +23,7 @@ const rules = [
     icon: Users,
     title: "Composição das Equipes",
     content:
-      "Todos os times devem ter no mínimo 6 jogadores ou mais para reservas, pois os mesmos não poderão jogar em outros times.",
+      "Cada time poderá ter até 15 jogadores, sendo 6 titulares e 9 reservas. Os mesmos não poderão jogar em outros times.",
   },
   {
     icon: Hash,
