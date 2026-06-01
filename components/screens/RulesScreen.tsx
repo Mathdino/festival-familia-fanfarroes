@@ -29,7 +29,7 @@ const rules = [
     icon: Hash,
     title: "Número de Jogos",
     content:
-      "Serão realizados 10 jogos, equivalendo a 20 equipes participantes.",
+      "Serão realizados 7 jogos, equivalendo a 14 equipes participantes.",
   },
   {
     icon: Clock,

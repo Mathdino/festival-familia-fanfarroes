@@ -91,8 +91,8 @@ export default function HomeScreen() {
         {/* Stats Cards */}
         <div className="grid grid-cols-3 gap-3 w-full mb-6">
           {[
-            { value: "20", label: "Times", sub: "participantes" },
-            { value: "10", label: "Jogos", sub: "no festival" },
+            { value: "14", label: "Times", sub: "participantes" },
+            { value: "7", label: "Jogos", sub: "no festival" },
             { value: "2007", label: "Desde", sub: "sempre unidos" },
           ].map((stat) => (
             <div
