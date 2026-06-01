@@ -133,7 +133,7 @@ export default function HomeScreen() {
               Jogue pelo troféu!
             </p>
             <p className="text-white/50 text-xs leading-snug mt-0.5">
-              20 equipes disputando a glória. Cada partida, uma nova história.
+              14 equipes disputando a glória. Cada partida, uma nova história.
             </p>
           </div>
         </div>
